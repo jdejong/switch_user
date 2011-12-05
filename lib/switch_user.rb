@@ -3,8 +3,6 @@ module SwitchUser
     class Engine < Rails::Engine
       config.to_prepare do
         ApplicationController.helper(SwitchUserHelper)
-        Spree::BaseController.helper(SwitchUserHelper)
-        Admin::BaseController.helper(SwitchUserHelper)
       end
     end
   else
