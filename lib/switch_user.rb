@@ -6,7 +6,7 @@ module SwitchUser
       end
     end
   else
-    %w(controllers helpers controllers/spree controllers/admin).each do |dir|
+    %w(controllers helpers).each do |dir|
       path = File.join(File.dirname(__FILE__), '..', 'app', dir)
       $LOAD_PATH << path
       ActiveSupport::Dependencies.load_paths << path
