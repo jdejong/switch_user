@@ -4,7 +4,7 @@ module SwitchUser
       #config.to_prepare do
       #  ApplicationController.helper(SwitchUserHelper)
       #end
-      initializer 'switch_user.h`elper' do |app|
+      initializer 'switch_user.helper' do |app|
         ActionView::Base.send :include, SwitchUserHelper
       end
     end
