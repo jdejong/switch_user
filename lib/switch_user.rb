@@ -5,7 +5,7 @@ module SwitchUser
         ApplicationController.helper(SwitchUserHelper)
       end
       ActiveSupport.on_load(:action_view) do
-        include SwitchUser::SwitchUserHelper
+        include ::SwitchUserHelper
       end
     end
   else
