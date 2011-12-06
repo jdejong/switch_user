@@ -1,4 +1,5 @@
-module SwitchUserHelper
+module SwitchUser
+ module SwitchUserHelper
   def switch_user_select
     if available?
       if current_user
@@ -34,4 +35,5 @@ module SwitchUserHelper
     end
     SwitchUser.view_guard.call(user, request)
   end
+ end
 end
