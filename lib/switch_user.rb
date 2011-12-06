@@ -4,9 +4,7 @@ module SwitchUser
       config.to_prepare do
         ApplicationController.helper(SwitchUserHelper)
       end
-      ActiveSupport.on_load(:action_view) do
-        include ::SwitchUserHelper
-      end
+      ActionView::Base.send :include, SwitchUserHelper
     end
   else
     %w(controllers helpers).each do |dir|
