@@ -2,8 +2,10 @@ module SwitchUser
   if defined? Rails::Engine
     class Engine < Rails::Engine
       config.to_prepare do
-        puts 'Loading Engine'
         ApplicationController.helper(SwitchUserHelper)
+      end
+      ActiveSupport.on_load(:action_view) do
+        include SwitchUserHelper
       end
     end
   else
