@@ -22,7 +22,7 @@ module SwitchUser
   self.provider = :devise
 
   mattr_accessor :available_users
-  self.available_users = { :user => lambda { User.all } }
+  self.available_users = { :user => lambda { User.all.order(:email) } }
 
   mattr_accessor :available_users_identifiers
   self.available_users_identifiers = { :user => :id }
